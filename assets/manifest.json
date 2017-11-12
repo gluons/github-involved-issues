@@ -3,6 +3,11 @@
 	"name": "GitHub involved issues",
 	"version": "1.0.0",
 	"description": "A Firefox add-on to add an involved button on your issues page.",
+	"applications": {
+		"gecko": {
+			"id": "github-involved-issues@gluons.github.io"
+		}
+	},
 	"content_scripts": [
 		{
 			"matches": ["*://github.com/issues*"],
