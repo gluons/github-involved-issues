@@ -9,7 +9,7 @@
     "watch": "run-s \"env gulp\"",
     "preforge": "run-s build \"env gulp clean:addon\"",
     "forge": "web-ext build -s ./dist -a ./addon",
-    "run": "web-ext run -f nightly -s ./dist --start-url \"github.com/issues\" --pref \"datareporting.policy.firstRunURL=\"",
+    "run": "web-ext run -s ./dist --start-url \"github.com/issues\" --pref \"datareporting.policy.firstRunURL=\"",
     "start": "run-p watch run",
     "lint:ts": "tslint -p .",
     "lint:ff": "web-ext lint -s ./dist -a ./addon",
@@ -38,6 +38,7 @@
     "@types/gulp": "^3.8.34",
     "@types/node": "^8.0.50",
     "@types/pump": "^1.0.1",
+    "@types/webpack": "^3.8.1",
     "cross-env": "^5.1.1",
     "del": "^3.0.0",
     "gulp": "^3.9.1",
@@ -51,6 +52,12 @@
     "tslint": "^5.8.0",
     "tslint-config-gluons": "^1.0.5",
     "typescript": "^2.6.1",
-    "web-ext": "^2.2.2"
+    "web-ext": "^2.2.2",
+    "webpack": "^3.8.1"
+  },
+  "dependencies": {
+    "dom-loaded": "^1.0.1",
+    "github-injection": "^1.0.1",
+    "select-dom": "^4.1.1"
   }
 }

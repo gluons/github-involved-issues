@@ -1,5 +1,6 @@
 import * as del from 'del';
 import * as gulp from 'gulp';
+import * as plumber from 'gulp-plumber';
 import * as ts from 'gulp-typescript';
 import * as uglify from 'gulp-uglify';
 import * as pump from 'pump';
@@ -18,6 +19,7 @@ gulp.task('build', ['clean:dist', 'manifest'], cb => {
 	pump(
 		[
 			gulp.src('src/**/*.ts'),
+			plumber(),
 			ts(),
 			uglify(),
 			gulp.dest('dist')
@@ -26,6 +28,6 @@ gulp.task('build', ['clean:dist', 'manifest'], cb => {
 	);
 });
 
-gulp.task('watch', () => gulp.watch('./src/**/*', ['build']));
+gulp.task('watch', () => gulp.watch(['src/**/*', 'assets/**/*'], ['build']));
 
 gulp.task('default', ['watch']);
