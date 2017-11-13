@@ -34,17 +34,22 @@
     "url": "https://github.com/gluons/github-involved-issues/issues"
   },
   "homepage": "https://github.com/gluons/github-involved-issues",
+  "browserslist": [
+    "last 3 Firefox version",
+    "Firefox ESR"
+  ],
   "devDependencies": {
     "@types/gulp": "^3.8.34",
     "@types/node": "^8.0.50",
     "@types/pump": "^1.0.1",
     "@types/webpack": "^3.8.1",
+    "babel-core": "^6.26.0",
+    "babel-loader": "^7.1.2",
+    "babel-preset-env": "^1.6.1",
     "cross-env": "^5.1.1",
     "del": "^3.0.0",
     "gulp": "^3.9.1",
     "gulp-plumber": "^1.1.0",
-    "gulp-typescript": "^3.2.3",
-    "gulp-uglify": "^3.0.0",
     "npm-run-all": "^4.1.2",
     "pump": "^1.0.2",
     "ts-loader": "^3.1.1",
@@ -53,7 +58,8 @@
     "tslint-config-gluons": "^1.0.5",
     "typescript": "^2.6.1",
     "web-ext": "^2.2.2",
-    "webpack": "^3.8.1"
+    "webpack": "^3.8.1",
+    "webpack-stream": "^4.0.0"
   },
   "dependencies": {
     "dom-loaded": "^1.0.1",

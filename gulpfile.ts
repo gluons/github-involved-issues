@@ -1,9 +1,10 @@
 import * as del from 'del';
 import * as gulp from 'gulp';
 import * as plumber from 'gulp-plumber';
-import * as ts from 'gulp-typescript';
-import * as uglify from 'gulp-uglify';
 import * as pump from 'pump';
+import * as webpack from 'webpack-stream';
+
+import config from './webpack.config';
 
 gulp.task('clean:dist', () => del(['./dist/*']));
 
@@ -18,10 +19,9 @@ gulp.task('manifest', ['clean:dist'], () => {
 gulp.task('build', ['clean:dist', 'manifest'], cb => {
 	pump(
 		[
-			gulp.src('src/**/*.ts'),
+			gulp.src(['src/**/*.ts', '!src/**/*.d.ts']),
 			plumber(),
-			ts(),
-			uglify(),
+			webpack(config),
 			gulp.dest('dist')
 		],
 		cb
