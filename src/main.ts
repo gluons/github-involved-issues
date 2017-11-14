@@ -7,7 +7,7 @@ import { getUsername } from './utils';
 function inject(): void {
 	const username = getUsername();
 	let query = encodeURIComponent(`involves:${username} is:open type:issue`);
-	query = query.replace('%20', '+');
+	query = query.replace(/%20/g, '+');
 	let url = `https://github.com/issues?q=${query}`;
 
 	if (!select.exists('#involved-issues-link')) {
