@@ -2,11 +2,14 @@ import * as domLoaded from 'dom-loaded';
 import * as gitHubInjection from 'github-injection';
 import * as select from 'select-dom';
 
-const username = 'gluons';
-let query = encodeURIComponent(`involves:${username} is:open type:issue`);
-let url = `https://github.com/issues?q=${query}`;
+import { getUsername } from './utils';
 
 function inject(): void {
+	const username = getUsername();
+	let query = encodeURIComponent(`involves:${username} is:open type:issue`);
+	query = query.replace('%20', '+');
+	let url = `https://github.com/issues?q=${query}`;
+
 	if (!select.exists('#involved-issues-link')) {
 		let involvedButton = document.createElement('a');
 		involvedButton.id = 'involved-issues-link';

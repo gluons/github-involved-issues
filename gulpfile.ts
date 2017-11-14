@@ -28,6 +28,6 @@ gulp.task('build', ['clean:dist', 'manifest'], cb => {
 	);
 });
 
-gulp.task('watch', () => gulp.watch(['src/**/*', 'assets/**/*'], ['build']));
+gulp.task('watch', ['build'], () => gulp.watch(['src/**/*', 'assets/**/*'], ['build']));
 
 gulp.task('default', ['watch']);
