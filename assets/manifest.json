@@ -3,6 +3,8 @@
 	"name": "GitHub involved issues",
 	"version": "%version%",
 	"description": "A Firefox add-on to add an involved button on your issues page.",
+	"author": "Saran Tanpituckpong",
+	"homepage_url": "https://github.com/gluons/github-involved-issues",
 	"applications": {
 		"gecko": {
 			"id": "github-involved-issues@gluons.github.io"
