@@ -2,7 +2,7 @@
 	"manifest_version": 2,
 	"name": "GitHub Involved Issues",
 	"version": "%version%",
-	"description": "A Firefox add-on to add an involved button on your issues page.",
+	"description": "A Firefox add-on to add an involved button on your GitHub issues page.",
 	"author": "Saran Tanpituckpong",
 	"homepage_url": "https://github.com/gluons/github-involved-issues",
 	"applications": {
