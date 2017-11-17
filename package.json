@@ -9,7 +9,7 @@
     "watch": "run-s \"env gulp\"",
     "preforge": "run-s build \"env gulp clean:addon\"",
     "forge": "web-ext build -s ./dist -a ./addon",
-    "run": "web-ext run -s ./dist --start-url \"github.com/issues\" --pref \"datareporting.policy.firstRunURL=\"",
+    "run": "web-ext run -f nightly -p default -s ./dist --start-url \"github.com/issues\" --pref \"datareporting.policy.firstRunURL=\"",
     "dev": "run-p watch run",
     "start": "npm run dev",
     "lint:ts": "tslint -p .",
